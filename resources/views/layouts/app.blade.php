@@ -13,6 +13,7 @@
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+        
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
@@ -32,5 +33,40 @@
                 {{ $slot }}
             </main>
         </div>
+
+        <script>
+            // Get modal and buttons
+            const modal = document.getElementById('default-modal');
+            const openModalButton = document.getElementById('open-modal');
+            const closeModalButtons = document.querySelectorAll('[data-modal-hide="default-modal"]');
+            const alertButton = document.getElementById('alert-button');
+        
+            // Function to open modal
+            openModalButton.addEventListener('click', () => {
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+            });
+        
+            // Function to close modal
+            closeModalButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    modal.classList.add('hidden');
+                    modal.classList.remove('flex');
+                });
+            });
+        
+            // Function to show alert
+            alertButton.addEventListener('click', () => {
+                alert('Thank you for Donating :)');
+            });
+        
+            // Close modal when clicking outside the modal content
+            window.addEventListener('click', (event) => {
+                if (event.target === modal) {
+                    modal.classList.add('hidden');
+                    modal.classList.remove('flex');
+                }
+            });
+        </script>
     </body>
 </html>

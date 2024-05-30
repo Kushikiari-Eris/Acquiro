@@ -14,8 +14,7 @@
             </div>
 
             <!-- Settings Dropdown -->
-            <div class="hidden sm:flex sm:items-center sm:ms-6 z-50">
-                <span class="inline-flex items-center justify-center px-2 h-[2.5vh] py-2 mt-0.1 text-xs font-bold leading-none text-indigo-100 bg-purple-700 rounded"><img src="{{ asset('image/coin.png')}}" class="mr-2">$ 0</span>
+            <div class="hidden sm:flex sm:items-center sm:ms-6 z-200">
                 <x-dropdown align="right" width="48">
                     
                     <x-slot name="trigger">
